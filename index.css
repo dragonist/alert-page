@@ -95,6 +95,7 @@ button:hover{
 	width:60%;
 	height:40%;
 	padding: 2%;
+	border-radius: 7px;
 	background-color: #dddddd;
 }
 .alert-message-dropdown{
