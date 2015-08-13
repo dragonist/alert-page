@@ -1,5 +1,4 @@
-(function () {
-	function Alert () {
-		
-	}
-})();
+$(function () {
+	new Alert("#hello");
+
+});
