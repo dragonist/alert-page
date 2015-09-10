@@ -1,16 +1,37 @@
 (function () {
+
+	
 	function Alert (sContainer) {
 		this.Container = document.querySelector(sContainer);
-		this.alertBox = this.Container.querySelector(".alert-box");
-		$(this.Container).on("click", ".alert-button", this.showAlert.bind(this));
-
+		$(this.Container).on("click", ".show-button", this.showAlert.bind(this));
 	}
+
 	Alert.prototype.showAlert = function(e) {
-		$(this.Container).toggleClass("active");
-		// $().$()????
-		
+		if(Alert.activeOne){
+			Alert.activeOne.removeClass("active");
+			Alert.activeOne = null;
+		}
+		Alert.activeOne = $(this.Container);
+		Alert.activeOne.addClass("active");
+		e.stopPropagation();
 	};
 
+
+	function close(e){
+		if(Alert.activeOne){
+			Alert.activeOne.removeClass("active");
+			Alert.activeOne = null;
+			console.log("close");
+		}
+	}
+
+	$(function () {
+		$('html').on("click", close);
+		$('.alert-destroy').on("click", close);
+		$('.alert-message').on("click", function (e) {
+		  e.stopPropagation();
+		})
+	});
 
 	window.Alert = Alert;
 })();
