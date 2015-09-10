@@ -1,7 +1,10 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
 html,
 body {
 	margin: 0;
 	padding: 0;
+	font-family: 'Ubuntu', sans-serif;
 }
 button {
 	margin: 0;
@@ -19,7 +22,7 @@ button {
 }
 
 body {
-	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	/*font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
 	position: relative;
 	line-height: 1.4em;
 	background: #626864;
@@ -119,7 +122,6 @@ button:hover{
 	background-color: #44cccc;
 }
 .active .alert-box{
-
 	display: block;	
 	z-index: 10;
 }
