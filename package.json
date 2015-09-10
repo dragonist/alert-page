@@ -1,6 +1,6 @@
 {
   "name": "alert-page",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "팝업창을 띄워주는 라이브러리 입니다.",
   "main": "index.js",
   "scripts": {
