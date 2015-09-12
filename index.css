@@ -42,6 +42,8 @@ a{
 	font-weight: bold;
 	color : #111111;
 	-webkit-transition: color 0.5s; /* Safari */
+	-moz-transition: color 0.5s;
+	-o-transition: color 0.5s;
 	transition: color 0.5s;
 }
 a:hover{
@@ -127,4 +129,21 @@ button:hover{
 }
 .alert-box{
 	display: none;
+}
+.animation-opacity .alert-box{
+    z-index: -1;
+	opacity: 0;
+    display: block;
+}
+
+.animation-opacity.active .alert-box{
+	transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -webkit-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+	z-index: 1;
+	opacity: 1;
+}
+.animation-opacity.back .alert-box{
+	opacity: 0;
 }
