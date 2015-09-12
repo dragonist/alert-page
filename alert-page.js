@@ -16,12 +16,19 @@
 		e.stopPropagation();
 	};
 
+	Alert.prototype.setAnimation = function(type) {
+		this.animation = type;
+		// $(this.Container)[type]("slow", "linear");
+		// fadeToggle
+		$(this.Container).addClass("animation");
+		$(this.Container).addClass("animation-"+type);
+	};
+
 
 	function close(e){
 		if(Alert.activeOne){
 			Alert.activeOne.removeClass("active");
 			Alert.activeOne = null;
-			console.log("close");
 		}
 	}
 
