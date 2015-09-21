@@ -88,7 +88,7 @@ button:hover{
 	background-color: rgba(0,0,0,0.3);
 	z-index: 1;
 }
-.alert-message{
+.alert-message.origin{
 	position: fixed;
 	top:0;
 	bottom: 0;
@@ -104,7 +104,8 @@ button:hover{
 	border-radius: 7px;
 	background-color: #dddddd;
 }
-.alert-message-dropdown{
+
+.alert-message.dropdown{
 	position: absolute;
 	top: 100%;
 	left: 0;
@@ -114,7 +115,7 @@ button:hover{
 	border-radius: 7px;
 	background-color: #dddddd;
 }
-.alert-message-dropdown > *{
+.alert-message.dropdown > *{
 	position: relative;
 }
 .alert-destroy{
