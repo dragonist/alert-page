@@ -21,6 +21,7 @@
   "homepage": "https://github.com/dragonist/alert-page#readme",
   "dependencies": {
     "handlebars": "^3.0.3",
-    "jquery": "^2.1.4"
+    "jquery": "^2.1.4",
+    "localforage": "^1.2.10"
   }
 }
