@@ -29,8 +29,8 @@
 		var key = 'alert-page'+id;
 		$(this.Container).data("key", key);
 		localforage.getItem(key, function (err, result) {
-			if(result){
-				if(formDate(new Date()) === result.due && !result.show){
+			if(isThereDataAndExpired(result)){
+				if(!result.show){
 					var input = $(this.Container).find("input[type=checkbox]")[0];
 					input.checked = true;
 				}else{
@@ -43,6 +43,28 @@
 			}
 		}.bind(this));
 	};
+	Alert.prototype.setTemplate = function(templateId, context) {
+		$(this.Container).append(this.buildTemplate(templateId, context));
+		// $("#todo-list").append(json.map(function (obj) {
+		//     return TODO.build({target: obj.todo, key: obj.id, completed: obj.completed});
+		// }).join(''));
+		debugger;
+	};
+	
+	Alert.prototype.buildTemplate = function(templateId, context) {
+		var html = $(templateId).html();
+		var template = Handlebars.compile(html);
+	    return template(context);
+	};
+
+	function  isThereDataAndExpired(result) {
+		if(result){
+			if(result.due === formDate(new Date())){
+				return true;
+			}
+		}
+		return false;
+	}
 
 	function formDate (date) {
 		var yyyy = date.getFullYear().toString();
@@ -67,6 +89,7 @@
 			Alert.activeOne = null;
 		}
 	}
+	
 
 	$(function () {
 		$('html').on("click", close);

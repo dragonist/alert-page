@@ -17,11 +17,6 @@
 					<div class="alert-message origin">
 						<p>hello nice to meet you</p>
 						<p>page</p>
-						<div class="checkbox custom">
-						 	<input id="box" class="css-checkbox" type="checkbox" />
-						 	<label for="box" class="css-label"></label>
-							Today, No Showing More
-						</div>
 						<button class="alert-button alert-destroy">close</button>
 					</div>
 				</div>
@@ -29,22 +24,52 @@
 
 			<div id="hello2" class="alert-container">
 				<button class="alert-button show-button"> click me </button>
-					<div class="alert-message origin alert-box hide">
-						<p>hello nice to meet you</p>
-						<p>page</p>
-						<button class="alert-button alert-destroy">close</button>
-					</div>
+				<div class="alert-message origin alert-box hide">
+					<p>hello nice to meet you</p>
+					<p>page</p>
+					<button class="alert-button alert-destroy">close</button>
+				</div>
 			</div>
 
 			<div id="hello3" class="alert-container">
 				<button class="alert-button show-button"> click me </button>
-					<div class="alert-message dropdown alert-box hide">
-						<p>hello nice to meet you</p>
-						<p>page</p>
-						<button class="alert-button alert-destroy">close</button>
-					</div>
+				<div class="alert-message dropdown alert-box hide">
+					<p>hello nice to meet you</p>
+					<p>page</p>
+					<button class="alert-button alert-destroy">close</button>
+				</div>
 			</div>
 			
+			<div id="hello4" class="alert-container">
+				<button class="alert-button show-button"> click me </button>
+				
+			</div>
+
+			<div id="hello5" class="alert-container">
+				<button class="alert-button show-button"> click me </button>
+				<div class="alert-message origin alert-box hide">
+					<p>hello nice to meet you</p>
+					<p>page</p>
+					<div class="checkbox custom">
+					 	<input id="box" class="css-checkbox" type="checkbox" />
+					 	<label for="box" class="css-label"></label>
+						Today, No Showing More
+					</div>
+					<button class="alert-button alert-destroy">close</button>
+				</div>
+			</div>
+
+			<div id="hello6" class="alert-container">
+				<button class="alert-button show-button"> click me </button>
+				<div class="alert-message dropdown alert-box hide">
+					<p>hello nice to meet you</p>
+					<p>page</p>
+					<button class="alert-button alert-destroy">close</button>
+				</div>
+			</div>
+
+			<div id="hello6" class="alert-container">
+							
 		</div>
 		<div class="explain">
 			<p>
@@ -67,6 +92,17 @@
 <!-- // <script type="text/javascript" src="alert-page-native.js"></script> -->
 <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="node_modules/localforage/dist/localforage.js"></script>
+<script type="text/javascript" src="node_modules/handlebars/dist/handlebars.js"></script>
 <script type="text/javascript" src="alert-page.js"></script>
 <script type="text/javascript" src="index.js"></script>
+<script id="alert-template" type="text/x-handlerbars-template">
+	<div class="alert-background alert-box hide">
+		<div class="alert-message origin">
+			<p>Hello {{user}}, is this your email?</p>
+			<p>{{email}} hahaha</p>
+			<button class="alert-button alert-destroy">close</button>
+		</div>
+	</div>
+</script>
+
 </html>

@@ -4,7 +4,9 @@
   "description": "팝업창을 띄워주는 라이브러리 입니다.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "npm install",
+    "start": "python -m SimpleHTTPServer"
   },
   "repository": {
     "type": "git",
