@@ -28,7 +28,7 @@
 	Alert.prototype.setSession = function(id) {
 		var key = 'alert-page'+id;
 		$(this.Container).data("key", key);
-		localforage.getItem(key, function (err, result) {
+		localforage.getItem(key).then(function (result) {
 			if(isThereDataAndExpired(result)){
 				if(!result.show){
 					var input = $(this.Container).find("input[type=checkbox]")[0];
@@ -38,23 +38,24 @@
 				}
 			}else{
 				result = {show:true, due:formDate(new Date())};
-				localforage.setItem(key, result);
-				this.showAlert();
+				localforage.setItem(key, result).then(this.showAlert());
 			}
 		}.bind(this));
 	};
+
+
 	Alert.prototype.setTemplate = function(templateId, context) {
 		$(this.Container).append(this.buildTemplate(templateId, context));
-		// $("#todo-list").append(json.map(function (obj) {
-		//     return TODO.build({target: obj.todo, key: obj.id, completed: obj.completed});
-		// }).join(''));
-		debugger;
+
 	};
 	
 	Alert.prototype.buildTemplate = function(templateId, context) {
 		var html = $(templateId).html();
 		var template = Handlebars.compile(html);
 	    return template(context);
+	};
+	Alert.prototype.setAfterClose = function(eventClass, callback) {
+		$(this.Container).find(eventClass).on("click", callback);
 	};
 
 	function  isThereDataAndExpired(result) {
@@ -78,7 +79,7 @@
 			var checkbox = Alert.activeOne.find("input[type=checkbox]")[0];
 			if(checkbox){
 				var key = Alert.activeOne.data("key");
-				localforage.getItem(key, function (err, result) {
+				localforage.getItem(key).then(function (result) {
 					if(result.show === checkbox.checked){
 						result.show = !checkbox.checked;
 						localforage.setItem(key, result);
@@ -87,6 +88,7 @@
 			}
 			Alert.activeOne.removeClass("active");
 			Alert.activeOne = null;
+
 		}
 	}
 	
