@@ -3,10 +3,6 @@
 	<meta charset="UTF-8">
 	<title>alert-page</title>
 	<link rel="stylesheet" href="index.css">
-	<!-- // <script type="text/javascript" src="alert-page-native.js"></script> -->
-	<script type="text/javascript" src="lib/jquery.min.js"></script>
-	<script type="text/javascript" src="alert-page.js"></script>
-	<script type="text/javascript" src="index.js"></script>
 </head>
 <body>
 	<header>
@@ -14,36 +10,65 @@
 	</header>
 	<section>
 		<div class="button-container">
+
 			<div id="hello1" class="alert-container">
 				<button class="alert-button show-button"> click me </button>
 				<div class="alert-background alert-box hide">
-					<div class="alert-message">
+					<div class="alert-message origin">
 						<p>hello nice to meet you</p>
 						<p>page</p>
 						<button class="alert-button alert-destroy">close</button>
 					</div>
 				</div>
 			</div>
+
 			<div id="hello2" class="alert-container">
 				<button class="alert-button show-button"> click me </button>
-				<!-- <div class="alert-container"> -->
-					<div class="alert-message alert-box hide">
-						<p>hello nice to meet you</p>
-						<p>page</p>
-						<button class="alert-button alert-destroy">close</button>
-					</div>
-				<!-- </div> -->
+				<div class="alert-message origin alert-box hide">
+					<p>hello nice to meet you</p>
+					<p>page</p>
+					<button class="alert-button alert-destroy">close</button>
+				</div>
 			</div>
+
 			<div id="hello3" class="alert-container">
 				<button class="alert-button show-button"> click me </button>
-				<!-- <div class="alert-container"> -->
-					<div class="alert-message-dropdown alert-box hide">
-						<p>hello nice to meet you</p>
-						<p>page</p>
-						<button class="alert-button alert-destroy">close</button>
-					</div>
-				<!-- </div> -->
+				<div class="alert-message dropdown alert-box hide">
+					<p>hello nice to meet you</p>
+					<p>page</p>
+					<button class="alert-button alert-destroy">close</button>
+				</div>
 			</div>
+			
+			<div id="hello4" class="alert-container">
+				<button class="alert-button show-button"> click me </button>
+				
+			</div>
+
+			<div id="hello5" class="alert-container">
+				<button class="alert-button show-button"> click me </button>
+				<div class="alert-message origin alert-box hide">
+					<p>hello nice to meet you</p>
+					<p>page</p>
+					<div class="checkbox custom">
+					 	<input id="box" class="css-checkbox" type="checkbox" />
+					 	<label for="box" class="css-label"></label>
+						Today, No Showing More
+					</div>
+					<button class="alert-button alert-destroy">close</button>
+				</div>
+			</div>
+
+			<div id="hello6" class="alert-container">
+				<button class="alert-button show-button"> click me </button>
+				<div class="alert-message dropdown alert-box hide">
+					<p>navigate Project</p>
+					<button id="nav1" class="event-button alert-button">0</button>
+					<button id="nav2" class="event-button alert-button">1</button>
+					<button id="nav3" class="event-button alert-button">2</button>
+				</div>
+			</div>
+
 		</div>
 		<div class="explain">
 			<p>
@@ -61,5 +86,23 @@
 		Created by <a href="https://dragonist.github.io" target="_blank">dragonist</a> NHN-NEXT student 
 		<br>contact to mail erin314@naver.com 
 	</footer>
+
 </body>
+<!-- // <script type="text/javascript" src="alert-page-native.js"></script> -->
+<!-- // <script type="text/javascript" src="alert-page-native.js"></script> -->
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<script type="text/javascript" src="lib/localforage.min.js"></script>
+<script type="text/javascript" src="lib/handlebars.min.js"></script>
+<script type="text/javascript" src="alert-page.js"></script>
+<script type="text/javascript" src="index.js"></script>
+<script id="alert-template" type="text/x-handlerbars-template">
+	<div class="alert-background alert-box hide">
+		<div class="alert-message origin">
+			<p>Hello {{user}}, is this your email?</p>
+			<p>{{email}} hahaha</p>
+			<button class="alert-button alert-destroy">close</button>
+		</div>
+	</div>
+</script>
+
 </html>
